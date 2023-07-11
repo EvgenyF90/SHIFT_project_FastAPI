@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    env_file:
+      - ./.env
+  app:
+    build:
+      context: .
+    restart: always
+    ports:
+     - 8888:8000
+    depends_on:
+      - db
+    env_file:
+      - ./.env 

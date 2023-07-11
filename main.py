@@ -16,6 +16,11 @@ session = Session(engine)
 app = FastAPI(title='Salary')
 
 
+@app.get("/")
+def main_page():
+    return 'Hello!'
+
+
 @app.post("/get_token")
 def get_token(username: str, password: str):
     # Проверка учетных данных сотрудника
