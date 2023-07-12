@@ -3,11 +3,12 @@ version: '3.8'
 services:
   db:
     image: postgres:15
+    volumes:
+     - /var/lib/postgresql/data/
     env_file:
       - ./.env
   app:
-    build:
-      context: .
+    image: evgenyf90/shift_project:latest
     restart: always
     ports:
      - 8888:8000

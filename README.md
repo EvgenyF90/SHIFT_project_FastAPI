@@ -48,7 +48,7 @@ DB_PORT=порт для подключения к БД
 JWT_SECRET_KEY=секретный ключ для подключения JWT-токена
 ```
 
-Выполнить миграции:
+Выполнить миграции и наполнить базу данными:
 
 ```
 alembic revision --autogenerate -m 'BD creation'
@@ -67,6 +67,11 @@ uvicorn main:app --reload
 http://127.0.0.1:8000/docs/
 ```
 
+## Запуск через Docker:
+```
+docker-compose up -d --build
+```
+Docker образ: evgenyf90/shift_project:latest
 
 
 ## Автор
